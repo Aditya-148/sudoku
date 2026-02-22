@@ -31,12 +31,12 @@ class Board(pygame.sprite.Sprite):
 
         self.cells.update()
         self.cells.draw(self.overlay)
+
+        for i in range(1, 3):
+            pygame.draw.line(self.overlay, configs.CELL_BORDER_COLOR, (configs.CELL_SIZE*i*3, 0), (configs.CELL_SIZE*i*3, 1000), configs.GRID_BORDER)
+            pygame.draw.line(self.overlay, configs.CELL_BORDER_COLOR, (0, configs.CELL_SIZE*i*3), (1000, configs.CELL_SIZE*i*3), configs.GRID_BORDER)
         self.image.fill('black')
         self.image.blit(self.texture)
         self.image.blit(self.overlay)
         screen.blit(self.image, (40, 40))
         pygame.draw.rect(screen, configs.CELL_BORDER_COLOR, self.border, configs.BOARD_BORDER_WIDTH)
-
-        for i in range(1, 3):
-            pygame.draw.line(self.image, configs.CELL_BORDER_COLOR, (configs.CELL_SIZE*i*3, 0), (configs.CELL_SIZE*i*3, 1000), configs.GRID_BORDER)
-            pygame.draw.line(self.image, configs.CELL_BORDER_COLOR, (0, configs.CELL_SIZE*i*3), (1000, configs.CELL_SIZE*i*3), configs.GRID_BORDER)
