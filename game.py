@@ -23,7 +23,6 @@ class Game:
             self.events()
             self.screen.fill(configs.BG_COLOR)
             self.board.draw(self.screen)
-           
 
 if __name__ == "__main__":
     game = Game()
