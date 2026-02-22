@@ -22,7 +22,7 @@ class Board(pygame.sprite.Sprite):
         pygame.draw.rect(self.overlay, (0, 0, 0, 0), self.rect)
         for cell in self.cells:
             mouse_pos = pygame.mouse.get_pos()
-            if cell.rect.collidepoint(mouse_pos[0]-configs.CELL_SIZE, mouse_pos[1]-configs.CELL_SIZE):
+            if cell.rect.collidepoint(mouse_pos[0]-configs.CELL_SIZE/2, mouse_pos[1]-configs.CELL_SIZE/2):
                 cell.image.fill(configs.CELL_HIGHLIGHT_COLOR)
                 pygame.draw.rect(cell.image, configs.CELL_BORDER_COLOR, cell.border, configs.CELL_BORDER_WIDTH)
             else:
