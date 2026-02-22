@@ -1,5 +1,6 @@
 import pygame
 import configs
+import random
 
 class Cell(pygame.sprite.Sprite):
 
@@ -13,3 +14,4 @@ class Cell(pygame.sprite.Sprite):
         self.rect = self.image.get_rect(topleft=(left, top))
         self.image.fill(configs.CELL_COLOR)
         self.border = pygame.Rect((0, 0, self.size, self.size))
+        self.value = random.randint(1, 9)
