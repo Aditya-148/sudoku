@@ -64,22 +64,22 @@ class Board(pygame.sprite.Sprite):
         cell_list = self.cells.sprites()
 
         # validate columns
-        # for i in range(9):
-        #     hash = set()
-        #     for j in range(9):
-        #         if cell_list[j+i*9].value in hash:
-        #             return False
-        #         else:
-        #             hash.add(cell_list[j+i*9].value)
+        for i in range(9):
+            hash = set()
+            for j in range(9):
+                if cell_list[j+i*9].value in hash:
+                    return False
+                else:
+                    hash.add(cell_list[j+i*9].value)
 
-        # # validate rows
-        # for i in range(9):
-        #     hash = set()
-        #     for j in range(9):
-        #         if cell_list[i+j*9].value in hash:
-        #             return False
-        #         else:
-        #             hash.add(cell_list[i+j*9].value)
+        # validate rows
+        for i in range(9):
+            hash = set()
+            for j in range(9):
+                if cell_list[i+j*9].value in hash:
+                    return False
+                else:
+                    hash.add(cell_list[i+j*9].value)
 
         # validate grids
         i = 0
